@@ -1,0 +1,369 @@
+    .af-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    }
+
+    /* ── Sidebar ── */
+    .af-sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    border-right: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 14px;
+    min-height: 100vh;
+    }
+
+    .af-sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    }
+
+    .af-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    .af-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    }
+
+    .af-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    }
+
+    .af-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    }
+
+    .af-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #6B7280;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .af-nav-item:hover {
+    background-color: #F3F4F6;
+    color: #111827;
+    }
+
+    .af-nav-active {
+    background-color: #EEF2FF;
+    color: #1a1a8c;
+    font-weight: 600;
+    }
+
+    .af-nav-icon {
+    font-size: 15px;
+    width: 18px;
+    text-align: center;
+    }
+
+    .af-sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    }
+
+    /* ── Main ── */
+    .af-main {
+    flex: 1;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff;
+    }
+
+    /* Header */
+    .af-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .af-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 4px 0;
+    }
+
+    .af-subtitle {
+    font-size: 13px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .af-add-btn {
+    background-color: #1a1a8c;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .af-add-btn:hover {
+    background-color: #13137a;
+    }
+
+    /* Balance Card */
+    .af-balance-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    }
+
+    .af-balance-label {
+    font-size: 13px;
+    color: #6B7280;
+    margin: 0 0 8px 0;
+    }
+
+    .af-balance-amount {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 6px 0;
+    }
+
+    .af-balance-growth {
+    font-size: 13px;
+    color: #16a34a;
+    font-weight: 500;
+    margin: 0;
+    }
+
+    /* Bar Chart */
+    .af-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 80px;
+    flex-shrink: 0;
+    }
+
+    .af-bar {
+    width: 14px;
+    background-color: #c7d2fe;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s;
+    }
+
+    .af-bar-active {
+    background-color: #1a1a8c;
+    }
+
+    /* Filter Tabs */
+    .af-filters {
+    display: flex;
+    gap: 0;
+    border: 1.5px solid #c7d2fe;
+    border-radius: 10px;
+    width: fit-content;
+    overflow: hidden;
+    }
+
+    .af-filter-btn {
+    padding: 9px 24px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a8c;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .af-filter-btn:hover {
+    background-color: #EEF2FF;
+    }
+
+    .af-filter-active {
+    background-color: #EEF2FF;
+    font-weight: 700;
+    }
+
+    /* Account Cards Grid */
+    .af-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    }
+
+    .af-account-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 20px 16px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    }
+
+    .af-account-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    }
+
+    .af-account-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    }
+
+    .af-account-type {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .af-account-number {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .af-account-balance {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin: 4px 0;
+    }
+
+    .af-synced-badge {
+    display: inline-block;
+    background-color: #EEF2FF;
+    color: #1a1a8c;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+    }
+
+    /* Add Account Card */
+    .af-add-card {
+    background-color: #EEF2FF;
+    border: 2px dashed #c7d2fe;
+    border-radius: 14px;
+    padding: 20px 16px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-height: 160px;
+    }
+
+    .af-add-card:hover {
+    background-color: #e0e7ff;
+    }
+
+    .af-add-plus {
+    font-size: 28px;
+    color: #1a1a8c;
+    font-weight: 300;
+    }
+
+    .af-add-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a8c;
+    margin: 0;
+    text-align: center;
+    }
+
+    /* Summary Row */
+    .af-summary-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    }
+
+    .af-summary-card {
+    border: 1.5px solid #c7d2fe;
+    border-radius: 12px;
+    padding: 18px 20px;
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    }
+
+    .af-summary-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a8c;
+    margin: 0;
+    }
+
+    .af-summary-amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    }
+
+    .af-summary-sub {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    @media (max-width: 768px) {
+    .af-page {
+        flex-direction: column;
+    }
+
+    .af-sidebar {
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        padding: 16px;
+    }
+
+    .af-cards-grid {
+        justify-content: center;
+    }
+    }

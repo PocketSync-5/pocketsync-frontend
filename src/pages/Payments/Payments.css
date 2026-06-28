@@ -1,0 +1,434 @@
+    .pay-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 40px 24px;
+    box-sizing: border-box;
+    gap: 0;
+    align-items: flex-start;
+    justify-content: center;
+    }
+
+    /* ── Outer card wrapper ── */
+    .pay-page > * {
+    background-color: #ffffff;
+    }
+
+    /* ── Sidebar ── */
+    .pay-sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    border-right: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 16px;
+    min-height: 600px;
+    border-radius: 12px 0 0 12px;
+    }
+
+    .pay-sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    }
+
+    .pay-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    .pay-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    }
+
+    .pay-brand {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    }
+
+    .pay-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    }
+
+    .pay-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #6B7280;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .pay-nav-item:hover {
+    background-color: #F3F4F6;
+    color: #111827;
+    }
+
+    .pay-nav-active {
+    background-color: #EEF2FF;
+    color: #1a1a8c;
+    font-weight: 600;
+    }
+
+    .pay-nav-icon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    }
+
+    .pay-sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    }
+
+    .pay-nav-bottom {
+    font-size: 13px;
+    }
+
+    /* ── Main Content ── */
+    .pay-main {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 28px 32px;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 900px;
+    }
+
+    /* Header */
+    .pay-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    }
+
+    .pay-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 4px 0;
+    }
+
+    .pay-subtitle {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .pay-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .pay-export-btn {
+    background-color: #1a1a8c;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .pay-export-btn:hover {
+    background-color: #13137a;
+    }
+
+    .pay-date-btn {
+    background-color: #FFFFFF;
+    color: #374151;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    }
+
+    /* Summary Cards */
+    .pay-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    }
+
+    .pay-summary-card {
+    border: 1.5px solid #1a1a8c;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    }
+
+    .pay-summary-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a8c;
+    margin: 0;
+    }
+
+    .pay-summary-amount {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    }
+
+    .pay-summary-sub {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    /* Filter Tabs */
+    .pay-filters {
+    display: flex;
+    gap: 0;
+    border: 1.5px solid #1a1a8c;
+    border-radius: 10px;
+    width: fit-content;
+    overflow: hidden;
+    }
+
+    .pay-filter-btn {
+    padding: 10px 28px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a8c;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .pay-filter-btn:hover {
+    background-color: #EEF2FF;
+    }
+
+    .pay-filter-active {
+    background-color: #EEF2FF;
+    font-weight: 700;
+    }
+
+    /* Table */
+    .pay-table-wrapper {
+    overflow-x: auto;
+    }
+
+    .pay-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    }
+
+    .pay-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    border-bottom: 1px solid #E5E7EB;
+    }
+
+    .pay-table td {
+    padding: 16px 16px;
+    color: #374151;
+    border-bottom: 1px solid #F3F4F6;
+    }
+
+    .pay-table tr:last-child td {
+    border-bottom: none;
+    }
+
+    .pay-merchant {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .pay-merchant-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    }
+
+    .pay-amount {
+    font-weight: 600;
+    color: #111827;
+    }
+
+    @media (max-width: 768px) {
+    .pay-page {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .pay-sidebar {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        min-height: auto;
+    }
+
+    .pay-main {
+        border-radius: 0 0 12px 12px;
+    }
+
+    .pay-summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    /* ── Export PDF Modal ── */
+    .export-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    }
+
+    .export-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 28px 24px;
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+    }
+
+    .export-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    .export-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    }
+
+    .export-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    }
+
+    .export-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .export-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    }
+
+    .export-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    }
+
+    .export-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    }
+
+    .export-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .export-item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .export-item-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    }
+
+    .export-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 2px 0;
+    }
+
+    .export-item-sub {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .export-item-amount {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    flex-shrink: 0;
+    }
+
+    .export-btn {
+    width: 100%;
+    padding: 13px;
+    background-color: #1a1a8c;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .export-btn:hover {
+    background-color: #13137a;
+    }

@@ -1,0 +1,519 @@
+    .dash-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #3d3d3d;
+    padding: 40px 24px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    }
+
+    /* ── Sidebar ── */
+    .dash-sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    border-right: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 16px;
+    min-height: 700px;
+    border-radius: 12px 0 0 12px;
+    }
+
+    .dash-sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    }
+
+    .dash-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    .dash-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    }
+
+    .dash-brand {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    }
+
+    .dash-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    }
+
+    .dash-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #6B7280;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .dash-nav-item:hover {
+    background-color: #F3F4F6;
+    color: #111827;
+    }
+
+    .dash-nav-active {
+    background-color: #EEF2FF;
+    color: #1a1a8c;
+    font-weight: 600;
+    }
+
+    .dash-nav-icon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    }
+
+    .dash-sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    }
+
+    /* ── Main ── */
+    .dash-main {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    gap: 0;
+    max-width: 900px;
+    min-height: 700px;
+    }
+
+    /* ── Left Column ── */
+    .dash-left {
+    flex: 1;
+    padding: 28px 24px;
+    border-right: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+    .dash-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    }
+
+    .dash-greeting {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 4px 0;
+    }
+
+    .dash-greeting-sub {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .dash-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .dash-bell {
+    font-size: 20px;
+    cursor: pointer;
+    }
+
+    .dash-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #1a1a8c;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    }
+
+    /* Stacked wallet cards */
+    .dash-wallet {
+    background-color: #111827;
+    border-radius: 16px;
+    padding: 16px 20px 24px;
+    position: relative;
+    }
+
+    .dash-stacked-cards {
+    position: relative;
+    height: 140px;
+    margin-bottom: 16px;
+    }
+
+    .dash-card-chip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    }
+
+    .dash-chip-name {
+    font-size: 13px;
+    }
+
+    .dash-chip-balance {
+    font-size: 13px;
+    font-weight: 700;
+    }
+
+    .dash-wallet-bottom {
+    text-align: center;
+    }
+
+    .dash-total {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    }
+
+    .dash-total-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin: 0 0 16px 0;
+    }
+
+    .dash-connect-btn {
+    background-color: #ffffff;
+    color: #111827;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    }
+
+    .dash-connect-btn:hover {
+    background-color: #f3f4f6;
+    }
+
+    .dash-synced {
+    font-size: 13px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    /* Accounts section */
+    .dash-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    }
+
+    .dash-section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    }
+
+    .dash-view-all {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a8c;
+    cursor: pointer;
+    }
+
+    .dash-view-all:hover {
+    text-decoration: underline;
+    }
+
+    .dash-accounts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    }
+
+    .dash-account-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .dash-account-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .dash-account-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+    }
+
+    .dash-account-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 2px 0;
+    }
+
+    .dash-account-type {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .dash-account-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+    .dash-account-balance {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    }
+
+    .dash-account-arrow {
+    font-size: 18px;
+    color: #6B7280;
+    }
+
+    /* Encryption banner */
+    .dash-encryption {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background-color: #EEF2FF;
+    border-radius: 12px;
+    padding: 16px;
+    }
+
+    .dash-encryption-icon {
+    font-size: 24px;
+    background-color: #1a1a8c;
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    }
+
+    .dash-encryption-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 4px 0;
+    }
+
+    .dash-encryption-sub {
+    font-size: 13px;
+    color: #6B7280;
+    margin: 0;
+    line-height: 1.4;
+    }
+
+    /* ── Right Column ── */
+    .dash-right {
+    width: 340px;
+    flex-shrink: 0;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    }
+
+    /* Financial Snapshot */
+    .dash-snapshot-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    }
+
+    .dash-snapshot-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1a1a8c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    }
+
+    .dash-snapshot-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    }
+
+    .dash-snapshot-card {
+    border: 1.5px solid #c7d2fe;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    }
+
+    .dash-snapshot-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .dash-snapshot-period {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    }
+
+    .dash-snapshot-arrow {
+    font-size: 18px;
+    color: #6B7280;
+    cursor: pointer;
+    }
+
+    .dash-snapshot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .dash-snapshot-label {
+    font-size: 14px;
+    color: #374151;
+    }
+
+    .dash-snapshot-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    }
+
+    .dash-snapshot-divider {
+    height: 1px;
+    background-color: #E5E7EB;
+    }
+
+    .dash-snapshot-net {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1a1a8c;
+    }
+
+    /* Recent Activity */
+    .dash-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    }
+
+    .dash-activity-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .dash-activity-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .dash-activity-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    }
+
+    .dash-activity-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 2px 0;
+    }
+
+    .dash-activity-sub {
+    font-size: 12px;
+    color: #6B7280;
+    margin: 0;
+    }
+
+    .dash-activity-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    }
+
+    .dash-activity-amount {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    }
+
+    .dash-activity-arrow {
+    font-size: 16px;
+    color: #6B7280;
+    }
+
+    @media (max-width: 900px) {
+    .dash-main {
+        flex-direction: column;
+    }
+
+    .dash-right {
+        width: 100%;
+    }
+    }

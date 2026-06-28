@@ -1,0 +1,92 @@
+.connect-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.connect-card {
+  background-color: #5b5ea6;
+  border-radius: 24px;
+  padding: 56px 48px;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(91, 94, 166, 0.35);
+}
+
+/* Logo row — icon + brand name side by side */
+.connect-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.connect-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.connect-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Title */
+.connect-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+/* Subtitle */
+.connect-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.80);
+  margin: 0 0 40px 0;
+  line-height: 1.5;
+}
+
+/* Button */
+.connect-btn {
+  background-color: #FFFFFF;
+  color: #5b5ea6;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.connect-btn:hover {
+  background-color: #f0f0f5;
+  transform: translateY(-1px);
+}
+
+.connect-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .connect-card {
+    padding: 40px 28px;
+  }
+
+  .connect-title {
+    font-size: 32px;
+  }
+}
