@@ -1,11 +1,11 @@
     import { useState } from 'react';
     import { useNavigate } from 'react-router-dom';
+    import './Login.css';
+    import axios from 'axios';
     import { useDispatch } from 'react-redux';
     import { setUser } from '../../slices/authSlice';
     import type { AppDispatch } from '../../store';
     import { loginUser } from '../../services/api';
-    import axios from 'axios';
-    import './Login.css';
 
     const Login = () => {
     const navigate = useNavigate();

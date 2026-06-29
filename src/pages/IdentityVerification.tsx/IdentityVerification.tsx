@@ -27,7 +27,7 @@ export default function IdentityVerification() {
     } catch (error) {
       console.error('Profile creation failed:', error);
     }
-  };
+};
 
   return (
     <div className="vf-page">

@@ -61,12 +61,12 @@ const Signup = () => {
       navigate('/connect');
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error) {
-        if (axios.isAxiosError(error) && error.response?.status === 401) {
-          setErrors(prev => ({ ...prev, email: 'This email is already in use' }));
-        } else {
-          console.error('Signup failed:', error);
-        }
-      }
+    if (axios.isAxiosError(error) && error.response?.status === 409) {
+      setErrors(prev => ({ ...prev, email: 'This email is already in use' }));
+    } else {
+      console.error('Signup failed:', error);
+    }
+  }
   }
 };
 
