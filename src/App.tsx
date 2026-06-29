@@ -26,9 +26,7 @@ const App = () => {
         <Route path="/connect" element={<ConnectAccount />} />
         <Route path="/auth-handoff" element={<AuthHandoff />} />
         <Route path="/accounts" element={<Accounts />} />
-        <Route path="/dashboard" element={
-          <Layout><Dashboard /></Layout>
-        } />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/payments" element={
           <Payments />
         } />

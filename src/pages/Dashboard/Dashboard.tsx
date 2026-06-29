@@ -1,31 +1,9 @@
     import { useNavigate } from 'react-router-dom';
     import './Dashboard.css';
 
-    const accounts = [
-    { name: 'Access Bank', type: 'Salary Account', balance: '₦12,000.00', initial: 'A', color: '#f0a500', bg: '#fff3e0' },
-    { name: 'Kuda', type: 'Daily Spending', balance: '₦15,500.00', initial: 'K', color: '#7c3aed', bg: '#f5f3ff' },
-    { name: 'Opay', type: 'Everyday Wallet', balance: '₦12,000.00', initial: 'O', color: '#16a34a', bg: '#f0fdf4' },
-    { name: 'Moniepoint', type: 'Business Account', balance: '₦18,250.00', initial: 'M', color: '#2563eb', bg: '#eff6ff' },
-    ];
-
-    const stackedCards = [
-    { name: 'Access Bank', balance: '₦12,000.00', color: '#9333ea' },
-    { name: 'Kuda', balance: '₦15,500.00', color: '#ec4899' },
-    { name: 'Moniepoint', balance: '₦18,250.00', color: '#f97316' },
-    { name: 'Opay', balance: '₦12,000.00', color: '#0d9488' },
-    ];
-
-    const recentActivity = [
-    { icon: 'N', iconBg: '#E50914', name: 'Netflix Subscription', sub: 'Today, 11:43am - Opay', amount: '₦12,000.00' },
-    { icon: '⛽', iconBg: '#1a1a8c', name: 'Fuel Purchase', sub: 'Today, 11:18am - Opay', amount: '₦12,000.00' },
-    { icon: '↑', iconBg: '#1a1a8c', name: 'Transfer to Naomi', sub: 'Yesterday, 4:01am - Kuda', amount: '₦12,000.00' },
-    { icon: '↓', iconBg: '#1a1a8c', name: 'Salary Credit', sub: 'Yesterday, 9:20am - Access bank', amount: '₦12,000.00' },
-    { icon: '↓', iconBg: '#1a1a8c', name: 'Transfer from Joe', sub: 'Yesterday 8:00am - Moniepoint', amount: '₦12,000.00' },
-    ];
-
     const navItems = [
     { label: 'Dashboard', icon: '⊙', path: '/dashboard', active: true },
-    { label: 'Accounts', icon: '○', path: '/accounts' },
+    { label: 'Accounts', icon: '○', path: '/accounts-found' },
     { label: 'Payment', icon: '▣', path: '/payments' },
     { label: 'Cards', icon: '◇', path: '/cards' },
     ];
@@ -34,6 +12,21 @@
     { label: 'Settings', icon: '⚙', path: '/settings' },
     { label: 'Support', icon: '▣', path: '/support' },
     { label: 'Log out', icon: '→', path: '/' },
+    ];
+
+    const accounts = [
+    { name: 'Access Bank', type: 'Salary Account', balance: '₦12,000.00', initial: 'A', color: '#f0a500', bg: '#fff3e0', logo: '/access-bank.png' },
+    { name: 'Kuda', type: 'Daily Spending', balance: '₦15,500.00', initial: 'K', color: '#7c3aed', bg: '#f5f3ff', logo: '/kuda.png' },
+    { name: 'Opay', type: 'Everyday Wallet', balance: '₦12,000.00', initial: 'O', color: '#16a34a', bg: '#f0fdf4', logo: '/opay.png' },
+    { name: 'Moniepoint', type: 'Business Account', balance: '₦18,250.00', initial: 'M', color: '#ffffff', bg: '#1a1a8c', logo: null },
+    ];
+
+    const recentActivity = [
+    { icon: 'N', iconBg: '#E50914', name: 'Netflix Subscription', sub: 'Today, 11:43am - Opay', amount: '₦12,000.00' },
+    { icon: '⛽', iconBg: '#1a1a8c', name: 'Fuel Purchase', sub: 'Today, 11:18am - Opay', amount: '₦12,000.00' },
+    { icon: '↑', iconBg: '#1a1a8c', name: 'Transfer to Naomi', sub: 'Yesterday, 4:01am - Kuda', amount: '₦12,000.00' },
+    { icon: '↓', iconBg: '#1a1a8c', name: 'Salary Credit', sub: 'Yesterday, 9:20am - Access bank', amount: '₦12,000.00' },
+    { icon: '↓', iconBg: '#1a1a8c', name: 'Transfer from Joe', sub: 'Yesterday 8:00am - Moniepoint', amount: '₦12,000.00' },
     ];
 
     const Dashboard = () => {
@@ -82,7 +75,7 @@
             {/* ── Left Column ── */}
             <div className="dash-left">
 
-            {/* Top Header */}
+            {/* Header */}
             <div className="dash-header">
                 <div>
                 <h1 className="dash-greeting">Good morning, Adeleke</h1>
@@ -94,35 +87,13 @@
                 </div>
             </div>
 
-            {/* Stacked Cards */}
+            {/* Wallet Image */}
             <div className="dash-wallet">
-                <div className="dash-stacked-cards">
-                {stackedCards.map((card, i) => (
-                    <div
-                    key={card.name}
-                    className="dash-card-chip"
-                    style={{
-                        backgroundColor: card.color,
-                        zIndex: stackedCards.length - i,
-                        top: `${i * 28}px`,
-                    }}
-                    >
-                    <span className="dash-chip-name">{card.name}</span>
-                    <span className="dash-chip-balance">{card.balance}</span>
-                    </div>
-                ))}
-                </div>
-
-                <div className="dash-wallet-bottom">
-                <p className="dash-total">₦57,750.00</p>
-                <p className="dash-total-sub">Total Balance across 4 connected accounts</p>
-                <button
-                    className="dash-connect-btn"
-                    onClick={() => navigate('/connect')}
-                >
-                    Connect Account
-                </button>
-                </div>
+                <img
+                src="/wallet.png"
+                alt="Connected accounts wallet"
+                className="dash-wallet-img"
+                />
             </div>
 
             <p className="dash-synced">🕐 Last synced 4 minutes ago</p>
@@ -133,21 +104,26 @@
                 <h2 className="dash-section-title">Your Accounts</h2>
                 <span
                     className="dash-view-all"
-                    onClick={() => navigate('/accounts')}
+                    onClick={() => navigate('/accounts-found')}
                 >
                     View All
                 </span>
                 </div>
-
                 <div className="dash-accounts-list">
                 {accounts.map((acc) => (
                     <div key={acc.name} className="dash-account-item">
                     <div className="dash-account-left">
                         <div
                         className="dash-account-avatar"
-                        style={{ backgroundColor: acc.bg, color: acc.color }}
+                        style={{ backgroundColor: acc.bg }}
                         >
-                        {acc.initial}
+                        {acc.logo ? (
+                            <img src={acc.logo} alt={acc.name} />
+                        ) : (
+                            <span style={{ color: acc.color }}>
+                            {acc.initial}
+                            </span>
+                        )}
                         </div>
                         <div>
                         <p className="dash-account-name">{acc.name}</p>
@@ -180,12 +156,11 @@
             <div className="dash-right">
 
             {/* Financial Snapshot */}
-            <div className="dash-snapshot">
+            <div>
                 <div className="dash-snapshot-header">
                 <div className="dash-snapshot-icon">💲</div>
                 <h2 className="dash-snapshot-title">Financial Snapshot</h2>
                 </div>
-
                 <div className="dash-snapshot-card">
                 <div className="dash-snapshot-top">
                     <p className="dash-snapshot-period">This month</p>
@@ -208,7 +183,7 @@
             </div>
 
             {/* Recent Activity */}
-            <div className="dash-activity">
+            <div>
                 <div className="dash-section-header">
                 <h2 className="dash-section-title">Recent Activity</h2>
                 <span
@@ -218,8 +193,7 @@
                     View All
                 </span>
                 </div>
-
-                <div className="dash-activity-list">
+                <div className="dash-activity-card">
                 {recentActivity.map((tx, i) => (
                     <div key={i} className="dash-activity-item">
                     <div className="dash-activity-left">
