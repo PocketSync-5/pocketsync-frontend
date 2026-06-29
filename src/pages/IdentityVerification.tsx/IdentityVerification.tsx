@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./IdentityVerification.css";
 import { useNavigate } from 'react-router-dom';
+import { createProfile } from '../../services/api';
 
 export default function IdentityVerification() {
   const [bvn, setBvn] = useState("");
@@ -17,12 +18,15 @@ export default function IdentityVerification() {
     phone.trim().length > 0 &&
     consent;
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (!isValid) return;
-    // TODO: wire up to your verification API
-    console.log("Submitting:", { bvn, dob, phone, nin, consent });
-    navigate('/auth-handoff')
+    try {
+      await createProfile(dob, phone, nin, bvn);
+      navigate('/auth-handoff');
+    } catch (error) {
+      console.error('Profile creation failed:', error);
+    }
   };
 
   return (

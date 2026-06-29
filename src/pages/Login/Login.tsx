@@ -1,9 +1,15 @@
     import { useState } from 'react';
     import { useNavigate } from 'react-router-dom';
+    import { useDispatch } from 'react-redux';
+    import { setUser } from '../../slices/authSlice';
+    import type { AppDispatch } from '../../store';
+    import { loginUser } from '../../services/api';
+    import axios from 'axios';
     import './Login.css';
 
     const Login = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch<AppDispatch>();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,11 +32,28 @@
         return isValid;
     };
 
-    const handleLogin = () => {
-        if (validate()) {
-        console.log('Logging in:', { email, password });
+    const handleLogin = async () => {
+    if (validate()) {
+        try {
+        const data = await loginUser(email, password);
+        localStorage.setItem('token', data.token);
+        dispatch(setUser({
+            id: data.user.id,
+            name: data.user.fullname,
+            email: data.user.email,
+        }));
         navigate('/connect');
+        } catch (error) {
+        if (axios.isAxiosError(error) && error.response?.status === 401) {
+            setErrors(prev => ({
+            ...prev,
+            password: 'Invalid email or password'
+            }));
+        } else {
+            console.error('Login failed:', error);
         }
+        }
+    }
     };
 
     return (

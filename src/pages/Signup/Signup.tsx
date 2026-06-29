@@ -1,9 +1,16 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Signup.css';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../slices/authSlice';
+import type { AppDispatch } from '../../store';
+import { registerUser } from '../../services/api';
+import axios from 'axios';
+
 
 const Signup = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -41,11 +48,27 @@ const Signup = () => {
     return isValid;
   };
 
-  const handleSignup = () => {
-    if (validate()) {
-      console.log('Signing up:', { name, email, password });
-    }
-  };
+  const handleSignup = async () => {
+  if (validate()) {
+    try {
+      const data = await registerUser(name, email, password);
+      localStorage.setItem('token', data.token);
+      dispatch(setUser({
+        id: data.user.id,
+        name: data.user.fullname,
+        email: data.user.email,
+      }));
+      navigate('/connect');
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (error) {
+        if (axios.isAxiosError(error) && error.response?.status === 401) {
+          setErrors(prev => ({ ...prev, email: 'This email is already in use' }));
+        } else {
+          console.error('Signup failed:', error);
+        }
+      }
+  }
+};
 
   return (
     <div className="signup-page">
