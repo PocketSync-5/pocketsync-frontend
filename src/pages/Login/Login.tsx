@@ -36,6 +36,7 @@
     if (validate()) {
         try {
         const data = await loginUser(email, password);
+        console.log('API RESPONSE:', data);
         localStorage.setItem('token', data.token);
         dispatch(setUser({
             id: data.user.id,
